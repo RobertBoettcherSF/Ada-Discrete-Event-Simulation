@@ -179,6 +179,8 @@ package body Discrete_Event_Simulation is
       end loop;
       Sim.Size := 0;
       Sim.Active_Count := 0;
+      Sim.Clock := 0.0;
+      Sim.Next_Id := 1;
    end Clear;
 
 end Discrete_Event_Simulation;
