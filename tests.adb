@@ -57,10 +57,10 @@ procedure Tests is
    function To_Event_Access is new Ada.Unchecked_Conversion (Spawner_Access, Event_Access);
 
    overriding procedure Execute (This : in out Spawner_Event; Sim : in out Simulator'Class) is
-      Child : Dummy_Access := new Dummy_Event'(Time      => This.Child_Time, 
-                                               Id        => 0, 
-                                               Cancelled => False, 
-                                               Val       => This.Child_Val);
+      Child : constant Dummy_Access := new Dummy_Event'(Time      => This.Child_Time, 
+                                                        Id        => 0, 
+                                                        Cancelled => False, 
+                                                        Val       => This.Child_Val);
       Discard_Id : Event_Id_Type;
    begin
       Log_Trace (999);
