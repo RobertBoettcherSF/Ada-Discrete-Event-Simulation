@@ -21,7 +21,7 @@ package Discrete_Event_Simulation is
    type Simulator (Max_Capacity : Capacity_Type) is tagged private;
 
    -- Must be overridden to define the behavior of the event.
-   procedure Execute (This : in out Event; Sim : in out Simulator) is abstract;
+   procedure Execute (This : in out Event; Sim : in out Simulator'Class) is abstract;
 
    -- Accessors
    function Current_Time (Sim : Simulator) return Sim_Time;
